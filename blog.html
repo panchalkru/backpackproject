@@ -1,0 +1,287 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}
+Blog
+{% endblock title %}
+
+{% block style %}  
+<style>
+  /*navbar*/
+  .nav1 {
+    color: black;
+    text-decoration: none;
+  }
+
+  .nav1:hover {
+    color: red;
+    text-decoration: none;
+    transition: 0.5s;
+  }
+
+  .box {
+    height: 450px;
+  }
+
+  .box:hover {
+    height: 100%;
+    background-color: #00000049;
+    transition: 0.5s;
+  }
+
+  .b1 {
+    color: black;
+  }
+
+  .a1 {
+    text-decoration: none;
+    color: black;
+  }
+
+  .a1:hover {
+    text-decoration: none;
+    color: #dc3545;
+    transition: 0.5s;
+  }
+
+  /* image */
+  .img1 {
+    background-image: url(../static/img/blog-1.png);
+    height: 450px;
+    background-size: cover;
+  }
+
+  .img2 {
+    background-image: url(../static/img/blog-2.png);
+    height: 450px;
+    background-size: cover;
+  }
+
+  .img3 {
+    background-image: url(../static/img/blog-3.png);
+    height: 450px;
+    background-size: cover;
+  }
+
+  .img4 {
+    background-image: url(../static/img/blog-4.png);
+    height: 450px;
+    background-size: cover;
+  }
+
+  .img5 {
+    background-image: url(../static/img/blog-5.png);
+    height: 450px;
+    background-size: cover;
+  }
+
+  .img6 {
+    background-image: url(../static/img/blog-6.png);
+    height: 450px;
+    background-size: cover;
+  }
+
+  /*color*/
+  .clr {
+    color: #000000;
+  }
+
+  .clr:hover {
+    color: #dc3545;
+    transition: 0.5s;
+  }
+
+  .bl1 {
+    color: none;
+    height: 450px;
+  }
+
+  .bl1:hover {
+    color: #000000;
+    height: 450px;
+  }
+
+  /*footer*/
+  .fs1 {
+    font-size: 50px;
+    color: #ff4545;
+    margin-bottom: 30px;
+  }
+
+  .bcb {
+    background-color: #222222;
+  }
+
+  .bcbb {
+    background-color: black;
+  }
+
+  .dv {
+    height: 50px;
+    width: auto;
+    position: relative;
+    margin-top: 25px;
+  }
+
+  .b {
+    color: white;
+    text-decoration: none;
+  }
+
+  .b:hover {
+    color: #dc3545;
+    transition: 0.5s;
+    text-decoration: none;
+  }
+
+  .btn3 {
+    padding: 5px 10px;
+    color: white;
+    background-color: #ff4545;
+    border: none;
+    border-radius: 10px;
+  }
+
+  .btn3:hover {
+    padding: 5px 10px;
+    color: white;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s;
+  }
+</style>
+{% endblock style %}
+
+
+
+{% block content %}
+
+  <div class="container-fluid mb-5" style="background-color:#f5f5f5;">
+    <div class="container">
+      <div class="raw">
+        <div class="col-md-12 align-content-center" style="background-color:#f5f5f5;height: 100px">
+          <span style="font-size: 30px;">Blog</span>
+          <span class="float-end align-content-center p-2 b1">Blog</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid mb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="col-md-12 shadow-sm" style="border: 1px solid #00000073">
+            <div class="container img1 p-0">
+              <div class="container box"></div>
+            </div>
+            <div class="container">
+              <h5 class="clr"><b>Duis sagitis ipsum prasent</b></h5>
+              <span>Tips - Post comments:0 Comments</span><br><br>
+              <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
+                ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.…</h6>
+              <br>
+              <a href="#" class="clr"><u>Continue Reading</u></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="col-md-12 shadow-sm" style="border: 1px solid #00000073">
+            <div class="container p-0 img2">
+              <div class="container box"></div>
+            </div>
+            <div class="container">
+              <h5 class="clr"><b>Tortor neque adpiscing diam</b></h5>
+              <span>Tips - Post comments:0 Comments</span><br><br>
+              <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
+                ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.…</h6>
+              <br>
+              <a href="#" class="clr"><u>Continue Reading</u></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid mb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="col-md-12 shadow-sm" style="border: 1px solid #00000073">
+            <div class="container img3 p-0">
+              <div class="container box"></div>
+            </div>
+            <div class="container">
+              <h5 class="clr"><b>Duis sagitis ipsum prasent</b></h5>
+              <span>Tips - Post comments:0 Comments</span><br><br>
+              <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
+                ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.…</h6>
+              <br>
+              <a href="#" class="clr"><u>Continue Reading</u></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="col-md-12 shadow-sm" style="border: 1px solid #00000073">
+            <div class="container p-0 img4">
+              <div class="container box"></div>
+            </div>
+            <div class="container">
+              <h5 class="clr"><b>Tortor neque adpiscing diam</b></h5>
+              <span>Tips - Post comments:0 Comments</span><br><br>
+              <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
+                ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.…</h6>
+              <br>
+              <a href="#" class="clr"><u>Continue Reading</u></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid mb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="col-md-12 shadow-sm" style="border: 1px solid #00000073">
+            <div class="container img5 p-0">
+              <div class="container box"></div>
+            </div>
+            <div class="container">
+              <h5 class="clr"><b>Duis sagitis ipsum prasent</b></h5>
+              <span>Tips - Post comments:0 Comments</span><br><br>
+              <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
+                ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.…</h6>
+              <br>
+              <a href="#" class="clr"><u>Continue Reading</u></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="col-md-12 shadow-sm" style="border: 1px solid #00000073">
+            <div class="container p-0 img6">
+              <div class="container box"></div>
+            </div>
+            <div class="container">
+              <h5 class="clr"><b>Tortor neque adpiscing diam</b></h5>
+              <span>Tips - Post comments:0 Comments</span><br><br>
+              <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
+                ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.…</h6>
+              <br>
+              <a href="#" class="clr"><u>Continue Reading</u></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+

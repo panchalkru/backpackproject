@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Login Page{% endblock title %}
+
+{% block style %}
+
+  <style>
+    /*navbar*/
+    .nav1 {
+      color: black;
+      text-decoration: none;
+    }
+
+    .nav1:hover {
+      color: red;
+      text-decoration: none;
+      transition: 0.5s;
+    }
+
+    .a1 {
+      text-decoration: none;
+      color: black;
+    }
+
+    .a1:hover {
+      text-decoration: none;
+      color: #dc3545;
+      transition: 0.5s;
+    }
+
+    .b1 {
+      color: black;
+    }
+
+    .fntw {
+      font-weight: 600;
+    }
+
+    .btn2 {
+      border: none;
+      color: white;
+      background-color: #dc3545;
+    }
+
+    .btn2:hover {
+      border: none;
+      color: white;
+      background-color: #ff4545;
+      transition: 0.5s;
+    }
+
+    /*footer*/
+    .fs1 {
+      font-size: 50px;
+      color: #ff4545;
+      margin-bottom: 30px;
+    }
+
+    .bcb {
+      background-color: #222222;
+    }
+
+    .bcbb {
+      background-color: black;
+    }
+
+    .dv {
+      height: 50px;
+      width: auto;
+      position: relative;
+      margin-top: 25px;
+    }
+
+    .b {
+      color: white;
+      text-decoration: none;
+    }
+
+    .b:hover {
+      color: #dc3545;
+      transition: 0.5s;
+      text-decoration: none;
+    }
+
+    .btn3 {
+      padding: 5px 10px;
+      color: white;
+      background-color: #ff4545;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .btn3:hover {
+      padding: 5px 10px;
+      color: white;
+      background-color: #dc3545;
+      border: none;
+      border-radius: 10px;
+      transition: 0.5s;
+    }
+  </style>
+
+  {% endblock style %}
+
+
+
+{% block content %}
+
+  
+
+  <div class="container-fluid mb-5" style="background-color:#f5f5f5;">
+    <div class="container">
+      <div class="raw">
+        <div class="col-md-12 align-content-center" style="background-color:#f5f5f5;height: 100px">
+          <span style="font-size: 30px;">Contact</span>
+          <a href="account" class="float-end align-content-center p-2 b1 a1">My Account</a>
+          <!-- <a href="signup" class="float-end align-content-center p-2 b1 a1">Sign-up</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  {% for message in messages %}
+  <div class="container">
+
+  <div class="alert alert-{{ message.tags }} alert-dismissible">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    <strong></strong> {{message}}
+  </div>
+</div>
+
+  {%endfor%}
+  <!-- Login page -->
+  <h1 class="text-center display-4 fntw mt-5 mb-3">Login</h1>
+  <div class="container mb-5">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6" style="border: 2px solid #0000005d;border-radius: 5px">
+        <div class="container p-3">
+          <div class="row">
+            <div class="container">
+                <form action="logincheck" method="post">
+                  {% csrf_token %}
+                <label for="name1" class="p-0">Username or email address *</label>
+                <input type="text" placeholder="Name" id="name1" name="name" required class="p-3 w-100" style="outline: none;border: none">
+                <label for="pass1" class="p-0 mt-3">Password</label>
+                <input type="password" placeholder="Password" id="pass1" name="pass" required class="p-3 w-100" style="outline: none;border: none">
+                <p class="p-0 mt-4"><input type="checkbox" required> Remember me</p>
+                <center>
+                  <button class="w-75 p-2 rounded-5 btn2 mt-3">
+                    <span>LOGIN</span>
+                  </button>
+                  <p class="p-0 mt-4">
+                    <a href="#" class="a1">Lost Your Password?</a>
+                  </p>
+                  <p class="p-0 mt-4">
+                    <a href="signup" class="a1">Don't have account</a>
+                  </p>
+                </center>
+              </form>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+
+{% endblock content %}
+  

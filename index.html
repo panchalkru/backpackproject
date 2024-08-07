@@ -1,0 +1,287 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+ Home Page
+{% endblock title %}
+
+{% block style %}
+<style>
+    .nav1 {
+        color: black;
+        text-decoration: none;
+    }
+
+    .nav1:hover {
+        color: red;
+        text-decoration: none;
+        transition: 0.5s;
+    }
+
+    .img1 {
+        background-image: url(../static/img/bg-home.png);
+        height: 700px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .image-overlay {
+        background-color: #dc3546ad;
+        height: 700px;
+        display: flex;
+        align-items: center;
+    }
+
+    .fa1 {
+        font-size: 90px;
+        color: #ff6e68;
+    }
+
+    .fs1{
+        font-size: 50px;
+        color: #ff4545;
+        margin-bottom: 30px;
+    }
+
+    .bcb{
+        background-color: #222222;
+    }
+    .bcbb{
+        background-color: black;
+    }
+    
+    .dv{
+        height: 50px;
+        width: auto;
+        position: relative;
+        margin-top: 25px;
+    }
+
+    .b{color: white;text-decoration: none;}
+    .b:hover{color: #dc3545;transition: 0.5s;text-decoration: none;}
+
+    /* font-wieght */
+    .fntw {
+        font-weight: 500;
+    }
+
+    .fntw1 {
+        font-weight: 600;
+    }
+
+    /* button */
+    .btn1 {
+        padding: 10px 25px;
+        border-radius: 50px;
+        color: white;
+        border: none;
+        background-color: #ff2138;
+    }
+
+    .btn1:hover {
+        padding: 10px 25px;
+        border-radius: 50px;
+        color: white;
+        border: none;
+        background-color: #dc3545;
+        transition: 0.5s;
+    }
+
+    .btn2 {
+        padding: 10px 15px;
+        border-radius: 50px;
+        color: white;
+        border: none;
+        background-color: #dc3545;
+        font-size: medium;
+    }
+
+    .btn2:hover {
+        padding: 10px 15px;
+        border-radius: 50px;
+        color: white;
+        border: none;
+        background-color: #ff2138;
+        font-size: medium;
+        transition: 0.5s;
+    }
+
+    .btn3{padding: 5px 10px;color: white;background-color: #ff4545;border: none;border-radius: 10px;}
+    .btn3:hover{padding: 5px 10px;color: white;background-color: #dc3545;border: none;border-radius: 10px;transition: 0.5s;}
+
+
+    /* height */
+    .h1 {
+        height: 500px;
+    }
+
+    .h2 {
+        font-size: 80px;
+        font-weight: 700;
+        color: #e3e3e3;
+    }
+</style>
+{% endblock style %}
+
+<body>
+{% block content %}
+
+    {% for message in messages %}
+  <div class="container">
+  <div class="alert alert-{{ message.tags }} alert-dismissible">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+     {{message}}
+  </div>
+</div>
+
+  {%endfor%}
+    <h1>{{name}}</h1>
+    <div class="container-fluid img1 p-0 mb-5">
+        <div class="container-fluid image-overlay">
+            <div class="container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 cl1">
+                            <p>NULLAM MAXIMUS SEMPER EST</p>
+
+                            <h1 class="display-3 fntw"><b>PERFECT FOR THE OUTDOORS</b></h1>
+                            <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
+                                luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                            <button class="btn1">DISCOVER NOW</button>
+                        </div>
+                        <div class="col-6"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 text-center mb-5">
+        <div class="row">
+            <div class="col-4">
+                <i class="fa fa-plane fa1" aria-hidden="true"></i>
+                <h6 class="mt-3">TRAVEL</h6>
+                <p>Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            </div>
+            <div class="col-4">
+                <i class="fa fa-book fa1" aria-hidden="true"></i>
+                <h6 class="mt-3">STUDY</h6>
+                <p>Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            </div>
+            <div class="col-4">
+                <i class="fa fa-compass fa1" aria-hidden="true"></i>
+                <h6 class="mt-3">VACATION</h6>
+                <p>Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            </div>
+            <div class="col-4 mt-4">
+                <i class="fa fa-folder fa1" aria-hidden="true"></i>
+                <h6 class="mt-3">WORK</h6>
+                <p>Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            </div>
+            <div class="col-4 mt-4">
+                <i class="fa-solid fa-person-hiking fa1"></i>
+                <h6 class="mt-3">HIKING</h6>
+                <p>Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            </div>
+            <div class="col-4 mt-4">
+                <i class="fa-solid fa-heart fa1"></i>
+                <h6 class="mt-3">FITNESS</h6>
+                <p>Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 mt-5">
+                <div class="container-fluid align-items-center mt-5 pt-5">
+                    <h6>ABOUT OUR COMPANY</h6>
+                    <h1 class="fntw1">BEST BRAND BEST QUALITY</h1>
+                    <p style="font-size:large;text-align: justify"> Sed maximus ante vel ipsum euismod maximus. Sed
+                        efficitur semper lacus, sit amet facilisis nulla
+                        gravida sit amet. Vivamus eleifend, elit eget scelerisque pulvinar, augue dui rutrum tellus,
+                        porta scelerisque purus mi a enim. Nulla eget nunc convallis, blandit leo ut, iaculis orci. Ut
+                        condimentum molestie ex nec lacinia.</p>
+                    <p style="font-size:large;text-align: justify">
+                        Morbi aliquet interdum nisi, id pulvinar enim elementum quis. Praesent tincidunt nisi ac purus
+                        hendrerit, non molestie eros malesuada. Pellentesque porta neque eu metus efficitur, ut commodo
+                        diam tempus.
+                    </p>
+                    <button class="btn2">
+                        MORE ABOUT US
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img class="img-fluid" src="{% static 'img/home.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center mt-5">
+        <div class="row">
+            <div class="col-3">
+                <h2 class="h2">68</h2>
+                <p><b>BEST BRANDS</b></p>
+            </div>
+            <div class="col-3">
+                <h2 class="h2">99+</h2>
+                <p><b>QUALITY PRODUCTS</b></p>
+            </div>
+            <div class="col-3">
+                <h2 class="h2">16</h2>
+                <p><b>TOP CATEGORIES</b></p>
+            </div>
+            <div class="col-3">
+                <h2 class="h2">5K</h2>
+                <p><b>HAPPY CUSTOMERS</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bcg text-center">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-6 px-2">
+                    <i class="fa-solid fa-quote-left fs1"></i>
+                    <p>Aliquam dignissim lacinia tristique nulla lobortis nunc ac eros scelerisque varius suspendisse
+                        sit amet
+                        urna vitae urna semper quis at ligula.</p>
+                    <img src="" alt="">
+                    <h5>SOFIA MILLER</h5>
+                    <p>5 stars</p>
+                </div>
+                <div class="col-6 px-2">
+                    <i class="fa-solid fa-quote-left fs1"></i>
+                    <p>Aliquam dignissim lacinia tristique nulla lobortis nunc ac eros scelerisque varius suspendisse
+                        sit amet
+                        urna vitae urna semper quis at ligula.</p>
+                    <img src="" alt="">
+                    <h5>MARK LUGWID</h5>
+                    <p>5 stars</p>
+                </div>
+                <div class="col-6 px-2 mt-3">
+                    <i class="fa-solid fa-quote-left fs1"></i>
+                    <p>Aliquam dignissim lacinia tristique nulla lobortis nunc ac eros scelerisque varius suspendisse
+                        sit amet
+                        urna vitae urna semper quis at ligula.</p>
+                    <img src="" alt="">
+                    <h5>MIKE KENLI</h5>
+                    <p>5 stars</p>
+                </div>
+                <div class="col-6 px-2 mt-3">
+                    <i class="fa-solid fa-quote-left fs1"></i>
+                    <p>Aliquam dignissim lacinia tristique nulla lobortis nunc ac eros scelerisque varius suspendisse
+                        sit amet
+                        urna vitae urna semper quis at ligula.</p>
+                    <img src="" alt="">
+                    <h5>LOLA MILES</h5>
+                    <p>5 stars</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+</body>

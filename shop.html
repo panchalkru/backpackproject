@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Shop
+{% endblock title %}
+
+{% block style %}
+<style>
+  /*navbar*/
+  ::selection {
+    color: #ffae00;
+    background-color: #000000;
+  }
+
+  .nav1 {
+    color: black;
+    text-decoration: none;
+  }
+
+  .nav1:hover {
+    color: red;
+    text-decoration: none;
+    transition: 0.5s;
+  }
+
+  .b1 {
+    color: black;
+  }
+
+  .b1:hover {
+    color: #ff4545;
+    transition: 0.5s;
+  }
+
+  .box:hover {
+    box-shadow: 0px 0px 10px 1px #6969695d;
+    transition: 0.5s;
+  }
+
+  .a1 {
+    text-decoration: none;
+    color: white;
+  }
+
+  .box1 {
+    height: 300px;
+    width: 100%;
+    position: relative;
+    z-index: 100;
+  }
+
+  .box1 image :hover {
+    cursor: pointer;
+    z-index: -100;
+  }
+
+  /* button */
+  .btn1 {
+    width: 100%;
+    color: white;
+    background-color: #dc3545;
+    padding: 5px 0px;
+    border: none;
+  }
+
+  /*footer*/
+  .fs1 {
+    font-size: 50px;
+    color: #ff4545;
+    margin-bottom: 30px;
+  }
+
+  .bcb {
+    background-color: #222222;
+  }
+
+  .bcbb {
+    background-color: black;
+  }
+
+  .dv {
+    height: 50px;
+    width: auto;
+    position: relative;
+    margin-top: 25px;
+  }
+
+  .b {
+    color: white;
+    text-decoration: none;
+  }
+
+  .b:hover {
+    color: #dc3545;
+    transition: 0.5s;
+    text-decoration: none;
+  }
+
+  .btn3 {
+    padding: 5px 10px;
+    color: white;
+    background-color: #ff4545;
+    border: none;
+    border-radius: 10px;
+  }
+
+  .btn3:hover {
+    padding: 5px 10px;
+    color: white;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s;
+  }
+</style>
+{% endblock style %}
+
+  
+
+<body>
+{% block content %}
+<div class="container-fluid mb-5" style="background-color:#f5f5f5;">
+  <div class="container">
+    <div class="raw">
+      <div class="col-md-12 align-content-center" style="background-color:#f5f5f5;height: 100px">
+        <span style="font-size: 30px;">Products</span>
+        <span class="float-end align-content-center p-1 b1">>Products</span>
+      </div>
+    </div>
+  </div>
+</div>
+{% for message in messages %}
+<div class="container">
+
+<div class="alert alert-{{ message.tags }} alert-dismissible">
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  <strong>Yepp!</strong> {{message}}
+</div>
+</div>
+
+{%endfor%}
+<!-- First image row -->
+<div class="container-fluid mb-5">
+  <div class="container">
+    <div class="row">
+      {%for i in data%}
+      <div class="col-md-3 mt-5">
+        <div class="row">
+          <div class="container">
+            <img src="media/{{i.img}}" alt="image" class="img-fluid">
+           
+            <form action="cartItem" method="post">
+              {% csrf_token %}
+              <input type="text" name="nm" value={{i.name}} hidden>
+              <input type="text" name="mg" value={{i.img}} hidden>
+              <input type="text" name="prce" value={{i.price}} hidden>
+              <button class="btn1">Add to Cart</button>
+            </form>
+            
+          </div>
+          <div class="container text-center">
+            <span>Pet</span>
+            
+            <br>
+            <h5 class="text-success">${{i.price}}.00</h5>
+            <i class="fa-solid fa-star" style="color:#f9ca63"></i>
+            <i class="fa-solid fa-star" style="color:#f9ca63"></i>
+            <i class="fa-solid fa-star" style="color:#f9ca63"></i>
+            <i class="fa-solid fa-star" style="color:#f9ca63"></i>
+            <i class="fa-solid fa-star-half-stroke" style="color:#f9ca63"></i>
+          </div>
+        </div>
+      </div>
+
+      {%endfor%}
+
+      
+    </div>
+  </div>
+</div>
+{% endblock content %}
+
+</body>

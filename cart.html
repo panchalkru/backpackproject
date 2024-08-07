@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Cart{% endblock title %}
+{% block style %}
+    <style>
+        /*navbar*/
+        .nav1 {
+            color: black;
+            text-decoration: none;
+        }
+
+        .nav1:hover {
+            color: red;
+            text-decoration: none;
+            transition: 0.5s;
+        }
+
+        .a1 {
+          text-decoration: none;
+          color: black;
+        }
+    
+        .a1:hover {
+          text-decoration: none;
+          color: #dc3545;
+          transition: 0.5s;
+        }
+    
+        .b1 {
+          color: black;
+        }
+        /*footer*/
+        .fs1{
+            font-size: 50px;
+            color: #ff4545;
+            margin-bottom: 30px;
+        }
+
+        .bcb{
+            background-color: #222222;
+        }
+        .bcbb{
+            background-color: black;
+        }
+        
+        .dv{
+            height: 50px;
+            width: auto;
+            position: relative;
+            margin-top: 25px;
+        }
+
+        .b{color: white;text-decoration: none;}
+        .b:hover{color: #dc3545;transition: 0.5s;text-decoration: none;}
+
+        .btn3{padding: 5px 10px;color: white;background-color: #ff4545;border: none;border-radius: 10px;}
+        .btn3:hover{padding: 5px 10px;color: white;background-color: #dc3545;border: none;border-radius: 10px;transition: 0.5s;}
+    </style>
+    {% endblock style %}
+
+
+{% block content %}
+
+    <div class="container-fluid mb-5" style="background-color:#f5f5f5;">
+      <div class="container">
+        <div class="raw">
+          <div class="col-md-12 align-content-center" style="background-color:#f5f5f5;height: 100px">
+            <span style="font-size: 30px;">Cart</span>
+            <a href="cart" class="float-end align-content-center p-2 b1 a1">Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container text-center col-md-9">
+      {% for message in messages %}
+  <div class="container">
+
+  <div class="alert alert-{{ message.tags }} alert-dismissible">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    <strong>Done</strong> {{message}}
+  </div>
+</div>
+
+  {%endfor%}
+      <table class="table table-bordered border border-5 border-secondary table-info table-hover">
+        <tr>
+          <th></th>
+          <th>IMAGE</th>
+          <th>PRODUCT</th>
+          <th>PRICE</th>
+          <th>QUANTITY</th>
+          <th>SUBTOTAL</th>
+        </tr>
+        {% for i in data %}
+
+          <tr>
+            <th>
+              <form action="deletecart" method="post">
+                {% csrf_token %}
+                <input type="text" value={{i.id}} name="cartproduct" hidden>
+                <button class="border border-none fs-4"><i class="fa-solid fa-xmark"></i></button>
+              </form>
+            </th>
+            <th class="col-md-3"><img src="media/{{i.img}}" alt="image" class="col-md-3"></th>
+            <th>{{i.name}}</th>
+            <th>{{i.price}}</th>
+            <th> 
+              <form action="decrement" method="post" style="display: inline;">
+                {% csrf_token %}
+                <input type="text" name="id" value="{{i.id}}" hidden>
+              <input type="submit" class="btn btn-primary" value="-">
+            </form>
+                {{i.quantity}}  
+                <form action="increment" method="post" style="display: inline;">
+                  {% csrf_token %}
+                  <input type="text" name="id" value={{i.id}} hidden>
+                  <input type="submit" class="btn btn-primary" value="+">
+                </form>
+               </th>
+               
+            <th>{{i.subtotal}}</th>
+          </tr>
+          {% endfor %}
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+              {{totalAmount}}
+            </td>
+          </tr>
+
+
+      </table>
+      
+    </div>
+
+
+
+    {% endblock content %}
